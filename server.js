@@ -2,12 +2,12 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let app = express();
 let MongoClient = require('mongodb').MongoClient;
-let ObjectId = require('mongodb').ObjectID;
-let mongoURL = 'mongodb://localhost:27017/test';
+let mongoURL = 'mongodb://mongo:27017/test';
+
 let db;
 let login = require('./rest/login/login.js');
 let user = require('./rest/user/user.js');
-let port = 8080;
+let port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,7 +30,7 @@ app.post('/api/login', (req, res) => {
 
 MongoClient.connect(mongoURL, (err, database) => {
     if (err !== null) {
-        // console.log(err);
+        throw new Error(err);
     }
     db = database;
 });

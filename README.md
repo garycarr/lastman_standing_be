@@ -12,6 +12,9 @@ One day it will have tests and proper structuring.
 
 To run in docker
 ```
-docker build -t lastman-standing-be-app .
-docker run -p 8080:8080 --rm  --name lastman-standing-be lastman-standing-be-app
+docker build -t lastman-standing-be-app . && docker run -p 3000:3000 --rm  --name lastman-standing-be lastman-standing-be-app
+```
+Or to run with docker-compose to get mongo up
+```
+docker-compose -f docker-compose.dev.yml  up
 ```
