@@ -7,6 +7,7 @@ let mongoURL = 'mongodb://localhost:27017/test';
 let db;
 let login = require('./rest/login/login.js');
 let user = require('./rest/user/user.js');
+let port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -34,4 +35,4 @@ MongoClient.connect(mongoURL, (err, database) => {
     db = database;
 });
 
-app.listen(5000, () => { });
+app.listen(port, () => { });
