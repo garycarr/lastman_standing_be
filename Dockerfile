@@ -1,4 +1,5 @@
 FROM node:latest
+Maintainer G Carr
 
 # Create app directory
 RUN mkdir -p /usr/src/app
