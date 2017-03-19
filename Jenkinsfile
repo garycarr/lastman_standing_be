@@ -2,5 +2,7 @@
 node {
     stage 'pull repo'
     checkout scm
-    sh 'git log'
+
+    stage 'docker build'
+    sh 'docker build -t ${env.JOB_NAME}-${env.BUILD_ID} .'
 }
