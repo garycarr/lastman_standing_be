@@ -4,5 +4,5 @@ node {
     checkout scm
 
     stage 'docker build'
-    sh 'docker build -t ${env.JOB_NAME}-${env.BUILD_ID} .'
+    sh "docker build -t ${env.JOB_NAME}-${env.BUILD_ID} ."
 }
